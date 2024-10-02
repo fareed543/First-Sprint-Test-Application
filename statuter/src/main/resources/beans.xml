@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Bean for Address -->
+    <bean id="addressBean" class="com.example.statuter.Address">
+        <property name="street" value="123 Main St"/>
+        <property name="city" value="Springfield"/>
+        <property name="state" value="IL"/>
+        <property name="zipCode" value="62704"/>
+    </bean>
+
+    <!-- Bean for Student, Address is injected here -->
+    <bean id="studentBean" class="com.example.statuter.Student">
+        <property name="firstName" value="Fareed"/>
+        <property name="lastName" value="Abdul"/>
+        <property name="rollNo" value="101"/>
+        <property name="department" value="Computer Science"/>
+        <property name="address" ref="addressBean"/>
+    </bean>
+
+</beans>
